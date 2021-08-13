@@ -1,0 +1,60 @@
+
+:root{
+    --primary-color: #8ecae6;
+    --secondar-color: #023047;
+}
+.admin .dashboard{
+    padding: 1em 2em;
+
+}
+.admin .dashboard .alert{
+    color: black;
+    margin-bottom: 0em;
+}
+
+.admin .dashboard  .dashboard-item .card{
+    border-radius: 2em;
+    margin-top: 2em;
+}
+
+.admin .dashboard .dashboard-item .card .card-body {
+    display: flex;
+}
+
+.admin .dashboard .dashboard-item .card .card-body .left{
+    width: 60%;
+}
+
+.admin .dashboard .dashboard-item .card .card-body .right{
+    display: flex;
+    align-items: center;;
+}
+
+.admin .dashboard .dashboard-item .card .card-body .right img{
+    height: 5em;
+}
+
+.admin .dashboard .dashboard-item .card .card-body .nos{
+    font-size: 4em;
+    font-weight: bolder;
+    color: #023047;
+}
+
+.admin .dashboard .dashboard-item .card .card-body .subtitle{
+    font-size: 1em;
+}
+.admin .dashboard .dashboard-item a{
+    color: black;
+    text-decoration: none;
+}
+.recent-clients h5{
+    background-color: var(--primary-color);
+    padding: .5rem 1rem;
+    margin-bottom: 0px;;
+    margin-top: 2rem;
+
+}
+
+.recent-clients .card{
+    margin: 0px;;
+}

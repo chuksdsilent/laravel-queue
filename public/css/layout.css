@@ -1,0 +1,212 @@
+body{
+    background-color: #f3f3f3;
+}
+
+:root{
+    --primary-color: #8ecae6;
+    --secondar-color: #023047;
+}
+.side-bar{
+    height: 100vh;
+    background-color: #000;
+    width: 100%;
+}
+.navbar-nav img{
+    height: 2em;
+    margin-right: 1em;
+
+}
+
+.notification-value{
+    background-color: red;
+    padding: 0em .4em;    
+    font-size: .75em;
+    height: 1.5em;
+    position: relative;
+    left: -2.5em;
+    top: -.5em;
+    color: white;
+
+}
+.username{
+    margin-right: .5em;
+}
+
+.dropdown-menu[data-bs-popper]{
+    left: -8em;
+}
+.dropdown-menu{
+    width: 20em;
+    font-size: .8em;
+}
+.col-md-2, .col-md-10{
+    margin: 0px;
+    padding: 0px;
+}
+
+.admin .setting-content, .set-content-height{
+    height: 90vh;
+    overflow-y: scroll;
+}
+.form-card{
+    margin: 2rem 10rem;
+}
+.lg-card{
+    margin: 2rem 7rem;
+}
+h4{
+    margin: .5em
+}
+.admin .main-content .form-card .card{
+    padding: 1rem 1.5rem;
+}
+.admin .main-content .print{
+    margin-right: 2em;
+}
+span.error {
+        color: #FF4343;
+        font-size: 11px;
+    }
+/*----------------------------------Nav bar-------------------------------------------------*/
+
+.navbar-custom { background-color: var(--primary-color) !important; }
+/*---------------------------------End Navbar---------------------------------------------*/
+
+/*----------------------------------------------------------Menu----------------------------------*/
+.side-menu{
+    padding-top: 1em;
+}
+.side-menu i{
+    margin-right: .8em;
+}
+
+.side-menu .dropdown-btn{
+    padding: .5em 1em;
+}
+
+.side-menu .dropdown-btn:hover, .side-menu a:hover{
+    background-color: #fb8500;;
+    padding: .5em 1em;
+
+}
+.sidenav img{
+    height: 5em;
+}
+
+
+.sidenav {
+  height: 100%;
+  width: 100%;
+  background-color: #023047;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+/* Style the sidenav links and the dropdown button */
+.sidenav a, .dropdown-btn {
+  text-decoration: none;
+  font-size: 16px;
+  color: #fff;
+  display: block;
+  border: none;
+  background: none;
+  width:100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+  padding: .5em 1em;
+    border-bottom: 1px solid #fff;
+}
+
+/* On mouse-over */
+.sidenav a:hover, .dropdown-btn:hover {
+  color: #f1f1f1;
+}
+
+.dropdown-container a{
+    font-size: 14px;
+    margin-left: 0px;
+}
+
+/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+.dropdown-container {
+  display: none;
+  background-color: #262626;
+  padding-left: 8px;
+}
+
+/* Optional: Style the caret down icon */
+.fa-caret-down {
+  float: right;
+  padding-right: 8px;
+}
+
+/*---------------------------End Menu-------------------------------------------------------*/
+
+.user-role{
+    color:white;
+    background-color: #3f37c9;
+    margin: .5em 5em;
+    border-radius: 2em;
+    font-size: 12px;
+}
+.report-card{
+    margin: 3rem 2rem;
+}
+
+/*----------------------------------------------Sub side bar-------------------------------------------*/
+
+  i.fa-angle-right {
+
+        color: white;
+    }
+
+    .col-md-3 .sub-menu a {
+        color: white;
+        font-size: 18px;
+        text-decoration: none;
+        padding: 10px 5px;
+        display: block;
+    }
+
+    .col-md-3 .sub-menu a .info {
+        font-size: 12px;
+    }
+
+    .sub-menu .sub-item {
+        margin-left: 20px;
+    }
+
+    .sub-menu .row {
+        padding: 0px;
+        margin: 0px;
+    }
+
+    .sub-menu a:hover {
+        background: #073850;
+        display: block;
+    }
+
+    .sub-menu {
+        margin-top: 30px;
+    }
+
+    .admin .row {
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .admin .container-fluid {
+        padding: 0px;
+        margin: 0px;
+    }
+
+    .sub-side-bar {
+        background: #04293b;
+        margin: 0px;
+        padding: 0px;
+        height: 90vh;
+        overflow-y: scroll;
+    }
+
+    /*------------------------------------------end sub side menu-------------------------------------------*/
