@@ -65,14 +65,14 @@
                                 .finally(alert())
                  })
                 const laraTable = document.getElementById("table");
-                setInterval(function(){
+                // setInterval(function(){
                     fetch('api/laraqueue')
                         .then(response => response.text())
                         .then(data => {
                             laraTable.innerHTML = data
                             console.log(data);
                         })
-                }, 1000);
+                // }, 1000);
            </script>
        </div>
    </div>
