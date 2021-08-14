@@ -34,8 +34,9 @@ class LaraQueue implements ShouldQueue
      */
     public function handle()
     {
+        echo  $this->msg ;
+
         foreach($this->data as $key => $value){
-            echo  $this->msg ;
             ModelsLaraQueue::where("id", $value->id)->update(["msgSent" => 1, "msg" => $this->msg ]);
         }
         

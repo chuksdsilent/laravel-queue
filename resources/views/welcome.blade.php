@@ -21,13 +21,13 @@
                 <div class="card mt-4">
                     <div class="card-body">
                         
-                            
+                        <form action="{{url('send-message')}}" method="post">
                             <div class="form-group">
                                 <label for="">Message</label>
-                                <input type="text" id="msg" class="form-control" name="name">
+                                <input type="text" id="msg" class="form-control" name="msg">
                             </div>
-                            <button type="button" id="submit" class="btn btn-primary mt-4">Send Message</button>
-                        
+                            <button type="submit" id="submit" class="btn btn-primary mt-4">Send Message</button>
+                        </form>
                     </div>
                 </div>
            </div>
@@ -39,40 +39,41 @@
            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
            <script>
 
-               const submit = document.getElementById("submit");
-               const msg = document.getElementById("msg").value;
-               submit.addEventListener("click", function(e){
-                   e.preventDefault();
-                   console.log(msg)
-                   var payload = {
-                                    msg
-                                };
+            //    const submit = document.getElementById("submit");
+            //    const msg = document.getElementById("msg").value;
+            //    submit.addEventListener("click", function(e){
+            //        e.preventDefault();
+            //        var payload = {
+            //                         msg
+            //                     };
 
-                                var data = new FormData();
-                             data.append( "msg", msg);
+            //                     var data = new FormData();
+            //                  data.append( "msg", msg);
 
-                                fetch("/send-message",
-                                {
-                                    method: "POST",
-                                    body: data
-                                },{
-                                    headers: {
-                                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                                    }
-                                })
-                                .then(function(res){ return res.json(); })
-                                .then(function(data){ })
-                                .finally(alert())
-                 })
+            //                     fetch("/send-message",
+            //                     {
+            //                         method: "POST",
+            //                         body: data
+            //                     },{
+            //                         headers: {
+            //                             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            //                         }
+            //                     })
+            //                     .then(function(res){ return res.json(); })
+            //                     .then(function(data){ })
+            //                     .finally(msg = '')
+            //                     window.location.reload();
+            //      })
                 const laraTable = document.getElementById("table");
-                // setInterval(function(){
+                setInterval(function(){
                     fetch('api/laraqueue')
                         .then(response => response.text())
                         .then(data => {
                             laraTable.innerHTML = data
                             console.log(data);
                         })
-                // }, 1000);
+                }, 1000);
+
            </script>
        </div>
    </div>
