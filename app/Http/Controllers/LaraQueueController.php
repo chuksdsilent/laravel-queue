@@ -16,4 +16,8 @@ class LaraQueueController extends Controller
         return view("result")->with("laras", $laras);
     }
 
+    public function getLara(){
+        return 343;
+    }
+
 }
