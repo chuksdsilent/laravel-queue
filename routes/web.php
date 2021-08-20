@@ -25,4 +25,4 @@ Route::get('/', function () {
     // return Hash::make("123456");
     return view('welcome');
 });
-Route::get('laraqueue', [LaraQueueController::class, "getLara"]);
+Route::get('api/laraqueue', [LaraQueueController::class, "getLara"]);
