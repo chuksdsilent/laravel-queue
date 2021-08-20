@@ -10,7 +10,6 @@ class LaraQueueController extends Controller
 {
     public function lara()
     {
-        return 234;
         $this->dispatch(new LaraQueue(LaraQueues::all(), request()->get("msg")));
         return redirect()->back();
     }
