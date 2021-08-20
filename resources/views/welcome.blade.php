@@ -22,6 +22,7 @@
                     <div class="card-body">
                         
                         <form action="{{url('message')}}" method="post">
+                            @csrf
                             <div class="form-group">
                                 <label for="">Message</label>
                                 <input type="text" id="msg" class="form-control" name="msg">
@@ -41,29 +42,29 @@
 
                const submit = document.getElementById("submit");
                const msg = document.getElementById("msg").value;
-               submit.addEventListener("click", function(e){
-                   e.preventDefault();
-                   var payload = {
-                                    msg
-                                };
+            //    submit.addEventListener("click", function(e){
+            //        e.preventDefault();
+            //        var payload = {
+            //                         msg
+            //                     };
 
-                                var data = new FormData();
-                             data.append( "msg", msg);
+            //                     var data = new FormData();
+            //                  data.append( "msg", msg);
 
-                                fetch("/send-message",
-                                {
-                                    method: "POST",
-                                    body: data
-                                },{
-                                    headers: {
-                                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                                    }
-                                })
-                                .then(function(res){ return res.json(); })
-                                .then(function(data){ })
-                                .finally(msg = '')
-                                window.location.reload();
-                 })
+            //                     fetch("message",
+            //                     {
+            //                         method: "POST",
+            //                         body: data
+            //                     },{
+            //                         headers: {
+            //                             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            //                         }
+            //                     })
+            //                     .then(function(res){ return res.json(); })
+            //                     .then(function(data){ })
+            //                     .finally(msg = '')
+            //                     window.location.reload();
+            //      })
                 const laraTable = document.getElementById("table");
                 setInterval(function(){
                     fetch('api/laraqueue')
