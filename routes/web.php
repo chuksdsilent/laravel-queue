@@ -19,7 +19,7 @@ use App\Http\Controllers\LaraQueueController;
 |
 */
 
-Route::post('send-message', [LaraQueueController::class, "lara"]);
+Route::post('message', [LaraQueueController::class, "lara"]);
 Route::get('/', function () {
     
     // return Hash::make("123456");

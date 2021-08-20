@@ -12,6 +12,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="{{asset("style.css")}}" rel="stylesheet" />
 </head>
+
+
 <body class="">
    <div class="container mt-4">
        <div class="row">
@@ -19,7 +21,7 @@
                 <div class="card mt-4">
                     <div class="card-body">
                         
-                        <form action="{{url('send-message')}}" method="post">
+                        <form action="{{url('message')}}" method="post">
                             <div class="form-group">
                                 <label for="">Message</label>
                                 <input type="text" id="msg" class="form-control" name="msg">
@@ -34,7 +36,48 @@
                 <table id="table" class="table"></table>
             </div>
            </div>
+           <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+           <script>
+
+               const submit = document.getElementById("submit");
+               const msg = document.getElementById("msg").value;
+               submit.addEventListener("click", function(e){
+                   e.preventDefault();
+                   var payload = {
+                                    msg
+                                };
+
+                                var data = new FormData();
+                             data.append( "msg", msg);
+
+                                fetch("/send-message",
+                                {
+                                    method: "POST",
+                                    body: data
+                                },{
+                                    headers: {
+                                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                                    }
+                                })
+                                .then(function(res){ return res.json(); })
+                                .then(function(data){ })
+                                .finally(msg = '')
+                                window.location.reload();
+                 })
+                const laraTable = document.getElementById("table");
+                setInterval(function(){
+                    fetch('api/laraqueue')
+                        .then(response => response.text())
+                        .then(data => {
+                            laraTable.innerHTML = data
+                            console.log(data);
+                        })
+                }, 1000);
+
+           </script>
        </div>
    </div>
+
 </body>
+
 </html>
