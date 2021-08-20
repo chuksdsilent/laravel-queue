@@ -10,14 +10,21 @@ class LaraQueueController extends Controller
 {
     public function lara()
     {
-        
         $this->dispatch(new LaraQueue(LaraQueues::all(), request()->get("msg")));
+        return redirect()->back();
+    }
+
+    public function getLara()
+    {
+
         $laras = LaraQueues::where("msgSent", 1)->get();
-        return view("result")->with("laras", $laras);
-    }
 
-    public function getLara(){
-        return 343;
-    }
+        $container = "";
+        foreach($laras as $key => $lara){
+            
+            $container .= "<tr><td>". $lara->id ."</td><td>". $lara->phone ."</td><td>".$lara->msg."</td><td>". $lara->created_at ."</td></tr>";
+        }
 
+        return $container;
+    }
 }
