@@ -21,7 +21,7 @@
                 <div class="card mt-4">
                     <div class="card-body">
                         
-                        <form action="{{url('message')}}" method="post">
+                        <form action="{{url('message')}}" method="get">
                             @csrf
                             <div class="form-group">
                                 <label for="">Message</label>
